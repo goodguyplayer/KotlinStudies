@@ -9,10 +9,12 @@ fun main() {
     // This is def a ceaser cypher, with a shift of x. I'd say that, considering the ascii table, k = 107 and m = 109,
     // that would mean x = 109-107?
     println(swapper(todecode, 2))
+    println(swapper("map", 2))
 }
 
 fun swapper(todecode: String, shift: Int): String {
     var output :String = ""
+    var helper :Char
 
     todecode.forEach { c: Char ->
         //output += (c.toByte().toInt() + shift).toChar()
