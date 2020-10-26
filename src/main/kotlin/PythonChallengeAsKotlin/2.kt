@@ -15,7 +15,8 @@ fun swapper(todecode: String, shift: Int): String {
     var output :String = ""
 
     todecode.forEach { c: Char ->
-        output += (c.toByte().toInt() + shift).toChar()
+        //output += (c.toByte().toInt() + shift).toChar()
+        output += if (Regex("[A-Za-z]").containsMatchIn(""+c)) ((c.toByte().toInt() + shift).toChar()) else c
     }
     return output
 }
