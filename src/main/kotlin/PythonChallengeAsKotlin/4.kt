@@ -1,0 +1,5 @@
+package PythonChallengeAsKotlin
+
+fun main() {
+    
+}
