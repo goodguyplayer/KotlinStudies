@@ -10,7 +10,13 @@ fun main() {
     val regex2 = """(\d+)""".toRegex()
 
     var matchResult = readFile("src/channel/" + nothing + ".txt")
-    var regexFind = regex2.find(matchResult)?.value
-    println(matchResult)
-    println(regexFind)
+    nothing = (regex2.find(matchResult)?.value).toString()
+
+    while (nothing != "null"){
+        println(matchResult)
+        matchResult = readFile("src/channel/" + nothing + ".txt")
+        nothing = (regex2.find(matchResult)?.value).toString()
+    }
+
+    // Issue is getting the zip file comment.
 }
