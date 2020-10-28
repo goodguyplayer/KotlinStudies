@@ -9,6 +9,8 @@ fun main() {
     val regex = """and the next nothing is (\d+)""".toRegex()
     val regex2 = """(\d+)""".toRegex()
 
-    var matchResult = httpRequest(link+nothing)?.body()
-    var regexFind = matchResult?.let { regex.find(it) }
+    var matchResult = readFile("src/channel/" + nothing + ".txt")
+    var regexFind = regex2.find(matchResult)?.value
+    println(matchResult)
+    println(regexFind)
 }
