@@ -14,17 +14,17 @@ Here's what we'll do.
     - Rather, we don't /need/ to save the characters. We can just count and pop them out.
  */
 fun main() {
-    countPop(readFile())
+    countPop(readFile("src/for3.txt"))
     
 }
 
 
 // To read file and return the whole string
 // https://www.baeldung.com/kotlin-read-file
-fun readFile(): String {
+fun readFile(filepath: String): String {
     //"This method isn't recommended for huge files and has an internal limitation of 2 GB file size."
     // Good thing that it's only 92 kb
-    return (File("src/for3.txt").readText(Charsets.UTF_8))
+    return (File(filepath).readText(Charsets.UTF_8))
 
 }
 
